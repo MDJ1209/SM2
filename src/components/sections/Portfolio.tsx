@@ -261,7 +261,6 @@ export default function Portfolio() {
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={0.4}
                     onDragEnd={handleDragEnd}
-                    onClick={() => window.open(filteredProjects[currentSlide].link, '_blank')}
                     className="absolute inset-0 cursor-grab active:cursor-grabbing w-full h-full flex flex-col justify-end"
                   >
                     <Image
@@ -295,10 +294,16 @@ export default function Portfolio() {
                         {filteredProjects[currentSlide].description}
                       </p>
 
-                      <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-semibold text-white/90 pt-1">
+                      <a
+                        href={filteredProjects[currentSlide].link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-semibold text-white/90 pt-1"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         Explore Case Study
                         <ArrowUpRight className="w-3.5 h-3.5" />
-                      </div>
+                      </a>
                     </div>
                   </motion.div>
                 </AnimatePresence>
@@ -385,10 +390,10 @@ export default function Portfolio() {
                   exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.4 } }}
                   onMouseEnter={() => setHoveredIndex(originalIndex)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  onClick={() => window.open(project.link, '_blank')}
                   className="group relative cursor-pointer w-full"
                   data-purpose="project-card"
                 >
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
                   {/* Image Container with Zoom & Hover Info Panels */}
                   <div className="image-zoom-container bg-neutral-900/50 mb-8 relative overflow-hidden transition-all duration-700 border border-white/5 rounded-sm aspect-[4/3]">
                     <Image
@@ -444,6 +449,7 @@ export default function Portfolio() {
                       {project.year}
                     </span>
                   </div>
+                  </a>
                 </motion.div>
               );
             })}
