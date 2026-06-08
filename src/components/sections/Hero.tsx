@@ -8,14 +8,23 @@ export default function Hero() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
+        staggerChildren: 0.15,
+        delayChildren: 0.2
       },
     },
+    exit: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.1,
+        staggerDirection: -1
+      }
+    }
   };
 
   const item: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
+    hidden: { opacity: 0, y: 60, filter: 'blur(15px)' },
+    show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } },
+    exit: { opacity: 0, y: -40, filter: 'blur(10px)', transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
   };
 
   return (
@@ -41,46 +50,52 @@ export default function Hero() {
       </div>
 
       {/* ── Content ── */}
-      <main className="relative z-10 pt-28 xs:pt-32 sm:pt-24 lg:pt-28 pb-16 md:pb-16 px-6 md:px-8 max-w-[1800px] mx-auto w-full flex-1 flex flex-col justify-between">
+      <main className="relative z-10 pt-28 sm:pt-32 lg:pt-28 pb-16 md:pb-16 px-6 md:px-8 max-w-[1800px] mx-auto w-full flex-1 flex flex-col justify-between">
         <div className="grid grid-cols-12 gap-4 md:gap-8">
           <div className="col-span-12 lg:col-span-10">
-            <motion.div variants={container} initial="hidden" animate="show">
+            <motion.div variants={container} initial="hidden" animate="show" exit="exit" whileInView="show" viewport={{ once: true, amount: 0.1 }}>
               <motion.h1
                 variants={item}
-                className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] leading-[1.05] sm:leading-[0.95] md:leading-[0.9] font-serif tracking-tight sm:tracking-tighter text-white drop-shadow-[0_4px_60px_rgba(0,0,0,0.4)]"
+                className="text-3xl sm:text-5xl md:text-7xl lg:text-[8rem] leading-[1.05] sm:leading-[0.95] md:leading-[0.9] font-serif tracking-tight sm:tracking-tighter text-white drop-shadow-[0_4px_60px_rgba(0,0,0,0.4)]"
                 data-purpose="hero-title"
               >
                 WE DESIGN <br /> <span className="italic font-normal">&amp;</span> BUILD <br /> PREMIUM
               </motion.h1>
-              <div className="grid grid-cols-12 mt-4 xs:mt-5 sm:mt-6 md:mt-4">
+              <div className="grid grid-cols-12 mt-4 sm:mt-5 md:mt-4">
                 <div className="col-span-12 md:col-start-2 md:col-span-11 lg:col-start-3 lg:col-span-10">
-                  <motion.h1 
+                  <motion.div 
                     variants={item} 
-                    className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] leading-[1.05] sm:leading-[0.95] md:leading-[0.9] font-serif tracking-tight sm:tracking-tighter text-white drop-shadow-[0_4px_60px_rgba(0,0,0,0.4)]"
+                    className="text-3xl sm:text-5xl md:text-7xl lg:text-[8rem] leading-[1.05] sm:leading-[0.95] md:leading-[0.9] font-serif tracking-tight sm:tracking-tighter text-white drop-shadow-[0_4px_60px_rgba(0,0,0,0.4)]"
                   >
                     DIGITAL CREATIONS
-                  </motion.h1>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
           </div>
         </div>
-        <div className="flex flex-col md:grid md:grid-cols-12 gap-12 mt-12 xs:mt-16 sm:mt-12 md:mt-12 items-start md:items-end w-full">
+        <div className="flex flex-col md:grid md:grid-cols-12 gap-12 mt-12 sm:mt-16 md:mt-12 items-start md:items-end w-full">
           <div className="col-span-12 md:col-span-4">
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 1 }}
+              initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-sm md:text-sm leading-relaxed text-neutral-300 max-w-[320px] md:max-w-xs font-light"
             >
-              SM² is a Swiss-inspired premier freelance platform and elite collective of talented student creators. We build premium, high-performance digital systems for global brands—bringing Swiss precision to every interaction.
+              SM² is a premier freelance platform and elite collective of talented college student creators from Vizag, India. We build premium, high-performance digital systems for global brands—bringing meticulous engineering and design to every interaction.
             </motion.p>
           </div>
           <div className="col-span-12 md:col-span-3 md:col-start-10 text-left md:text-right mt-4 md:mt-0">
             <motion.a
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: 1, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="group inline-flex flex-col items-start md:items-end"
               href="#work"
             >

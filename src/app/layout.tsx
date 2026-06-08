@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import StartProjectButton from "@/components/ui/StartProjectButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,7 +21,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "SM² | Student Creators Collective",
-  description: "SM² is a Swiss-inspired premium freelance platform and digital boutique launched by a collective of talented student creators.",
+  description: "SM² is a premium freelance platform and digital studio powered by an elite collective of talented college student creators.",
 };
 
 export const viewport: Viewport = {
@@ -36,13 +37,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`} >
-        <div className="relative overflow-x-clip w-full flex flex-col min-h-screen">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <SmoothScroll>
+          <div className="relative overflow-x-clip w-full flex flex-col min-h-screen">
+            <Navbar />
+            {children}
+            <StartProjectButton />
+            <Footer />
+          </div>
+        </SmoothScroll>
       </body>
     </html>
   );

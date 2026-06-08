@@ -8,39 +8,39 @@ interface Testimonial {
   quote: string;
   author: string;
   role: string;
-  project: string;
+  company: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     quote: "We were amazed by the speed, talent, and professional execution of this collective of student creators. SM² completely revolutionized our medical workflow into a gorgeous, HIPAA-compliant work of art.",
-    author: "Dr. Clara Vance",
+    author: "Rohan Desai",
     role: "Chief Executive",
-    project: "Medbud Health Portal",
+    company: "Medbud Health Portal",
   },
   {
     quote: "The WebGL reservation experience built by SM²'s freelance collective drove our luxury room bookings up by 140% in three months. Unparalleled attention to detail, academic-grade innovation, and absolute precision.",
-    author: "Jean-Luc Dubois",
+    author: "Ananya Sharma",
     role: "General Manager",
-    project: "Ocean Blue Resorts",
+    company: "Ocean Blue Resorts",
   },
   {
     quote: "Elite streetwear demands elite digital spaces. Working with SM²'s talented student creators was a revelation—they bypassed the typical agency layers to deliver an immersive loyalty platform that perfectly represents our culture.",
-    author: "Kaleb Cross",
+    author: "Vikram Reddy",
     role: "Creative Director",
-    project: "Loyal-Daddy Apparel",
+    company: "Loyal-Daddy Apparel",
   },
   {
     quote: "Absolute engineering wizardry. Bypassing bloated corporate agencies and working directly with the student creators at SM² allowed us to scale 10,000+ variants on Shopify with zero lag.",
-    author: "Aisha Rahman",
+    author: "Priya Patel",
     role: "Chief Technology Officer",
-    project: "Easy-Variants SaaS",
+    company: "Easy-Variants SaaS",
   },
   {
     quote: "The spatial 3D hall planning system is an architectural masterpiece. This team of student creators took a highly complex venue layout and made it incredibly intuitive for our event planners.",
-    author: "Pranav Rao",
+    author: "Karthik Iyer",
     role: "Managing Director",
-    project: "Amaravati Conventions",
+    company: "Amaravati Conventions",
   }
 ];
 
@@ -125,7 +125,14 @@ export default function Validation() {
       {/* Background soft ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-white/[0.02] rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-[1800px] mx-auto grid grid-cols-12 gap-8 items-start relative z-10">
+      <motion.div 
+        initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        exit={{ opacity: 0, y: -40, filter: 'blur(10px)' }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-[1800px] mx-auto grid grid-cols-12 gap-8 items-start relative z-10"
+      >
         {/* Left Column: Heading */}
         <div className="col-span-12 lg:col-span-4">
           <span className="text-[10px] uppercase tracking-[0.5em] text-white/40 block mb-6 md:mb-8">
@@ -192,7 +199,7 @@ export default function Validation() {
                   </div>
                   <div className="text-left md:text-right">
                     <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-white/30 border border-white/10 rounded-full px-4 py-1.5 bg-white/[0.02]">
-                      {testimonials[activeIndex].project}
+                      {testimonials[activeIndex].company}
                     </span>
                   </div>
                 </div>
@@ -252,7 +259,7 @@ export default function Validation() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

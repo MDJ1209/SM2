@@ -11,11 +11,9 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   const menuLinks = [
+    { name: 'Home', href: '/' },
     { name: 'Work', href: '/work' },
     { name: 'Services', href: '/services' },
-    { name: 'Studio', href: '/studio' },
-    { name: 'Process', href: '/process' },
-    { name: 'Insights', href: '/insights' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -125,8 +123,8 @@ export default function Navbar() {
 
               <motion.div variants={itemVariants} className="pt-8 border-t border-white/10 mt-8 space-y-4">
                 <span className="text-[10px] uppercase tracking-widest text-neutral-500 block">General Inquiries</span>
-                <a href="mailto:hello@smsquare.studio" className="text-lg text-white/80 hover:text-white transition-colors font-light">
-                  SMsquare@2026
+                <a href="mailto:smsquare123456@gmail.com" className="text-lg text-white/80 hover:text-white transition-colors font-light break-all">
+                  smsquare123456@gmail.com
                 </a>
               </motion.div>
             </motion.div>

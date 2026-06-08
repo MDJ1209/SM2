@@ -148,16 +148,31 @@ export default function Portfolio() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1
       }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
     show: {
       opacity: 1,
       y: 0,
+      filter: 'blur(0px)',
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      filter: 'blur(10px)',
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }
     }
   };
 
@@ -193,7 +208,7 @@ export default function Portfolio() {
             Real-World Builds
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-7xl max-w-4xl leading-tight text-white">
-            Refined themes and custom digital systems.
+            Legacy of Our Premium Creations.
           </h2>
         </div>
 
@@ -241,24 +256,24 @@ export default function Portfolio() {
                     onDragEnd={handleDragEnd}
                     className="absolute inset-0 cursor-grab active:cursor-grabbing w-full h-full flex flex-col justify-end"
                   >
-                    <Image 
-                      src={filteredProjects[currentSlide].image} 
-                      alt={filteredProjects[currentSlide].title} 
-                      fill 
+                    <Image
+                      src={filteredProjects[currentSlide].image}
+                      alt={filteredProjects[currentSlide].title}
+                      fill
                       className="object-cover pointer-events-none"
                       unoptimized
                     />
-                    
+
                     {/* Semi-transparent dark gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
-                    
+
                     {/* Inline top category indicator */}
                     <div className="absolute top-4 left-4 z-10">
                       <span className="text-[8px] uppercase tracking-widest px-2.5 py-1 bg-black/60 text-white/95 rounded-full border border-white/15 backdrop-blur-md font-medium">
                         {filteredProjects[currentSlide].category}
                       </span>
                     </div>
- 
+
                     {/* Overlay content at bottom of image */}
                     <div className="relative z-10 p-6 space-y-3">
                       <div className="flex justify-between items-baseline">
@@ -272,7 +287,7 @@ export default function Portfolio() {
                       <p className="text-white/80 text-xs font-light font-sans max-w-sm line-clamp-3">
                         {filteredProjects[currentSlide].description}
                       </p>
-                      
+
                       <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-semibold text-white/90 pt-1">
                         Explore Case Study
                         <ArrowUpRight className="w-3.5 h-3.5" />
@@ -281,12 +296,12 @@ export default function Portfolio() {
                   </motion.div>
                 </AnimatePresence>
               </div>
- 
+
               {/* Progress Indicator Dots / Bars */}
               <div className="flex gap-2 mt-6">
                 {filteredProjects.map((_, idx) => (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className="h-[2px] flex-1 bg-white/15 rounded-full overflow-hidden relative cursor-pointer"
                     onClick={() => {
                       setSlideDirection(idx > currentSlide ? 1 : -1);
@@ -294,7 +309,7 @@ export default function Portfolio() {
                     }}
                   >
                     {currentSlide === idx && (
-                      <motion.div 
+                      <motion.div
                         key={currentSlide}
                         className="absolute inset-y-0 left-0 bg-white"
                         initial={{ width: "0%" }}
@@ -312,19 +327,21 @@ export default function Portfolio() {
                   {currentSlide + 1} / {filteredProjects.length}
                 </span>
                 <div className="flex items-center gap-3">
-                  <button 
+                  <button
                     onClick={prevSlide}
-                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all bg-transparent focus:outline-none"
+                    className="group relative overflow-hidden w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-black transition-all duration-300 bg-transparent focus:outline-none cursor-pointer"
                     aria-label="Previous Slide"
                   >
-                    <ChevronLeft className="w-4 h-4" />
+                    <ChevronLeft className="relative z-10 w-4 h-4 transition-colors duration-300 group-hover:text-black" />
+                    <div className="absolute inset-0 bg-white scale-0 group-hover:scale-100 rounded-full transition-transform duration-300 ease-[0.16,1,0.3,1]" />
                   </button>
-                  <button 
+                  <button
                     onClick={nextSlide}
-                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all bg-transparent focus:outline-none"
+                    className="group relative overflow-hidden w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-black transition-all duration-300 bg-transparent focus:outline-none cursor-pointer"
                     aria-label="Next Slide"
                   >
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="relative z-10 w-4 h-4 transition-colors duration-300 group-hover:text-black" />
+                    <div className="absolute inset-0 bg-white scale-0 group-hover:scale-100 rounded-full transition-transform duration-300 ease-[0.16,1,0.3,1]" />
                   </button>
                 </div>
               </div>
@@ -342,7 +359,8 @@ export default function Portfolio() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
+          exit="exit"
+          viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-x-10 md:gap-y-16"
         >
           <AnimatePresence mode="popLayout">
@@ -365,10 +383,10 @@ export default function Portfolio() {
                 >
                   {/* Image Container with Zoom & Hover Info Panels */}
                   <div className="image-zoom-container bg-neutral-900/50 mb-8 relative overflow-hidden transition-all duration-700 border border-white/5 rounded-sm aspect-[4/3]">
-                    <Image 
-                      src={project.image} 
-                      alt={project.title} 
-                      fill 
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
                       className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
                       unoptimized
                     />
@@ -383,8 +401,8 @@ export default function Portfolio() {
                       {/* Top part: tags */}
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
-                          <span 
-                            key={tag} 
+                          <span
+                            key={tag}
                             className="text-[9px] uppercase tracking-widest px-2.5 py-1 bg-white/10 text-white/95 rounded-full border border-white/10 font-medium"
                           >
                             {tag}

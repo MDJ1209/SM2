@@ -13,8 +13,8 @@ export default function Footer() {
           <div className="col-span-12 lg:col-span-5 lg:pt-12 flex flex-col justify-between">
             <div>
               <span className="text-[10px] uppercase tracking-widest text-neutral-500 mb-4 block">Inquiries</span>
-              <a className="text-2xl md:text-4xl font-serif hover:italic transition-all" href="mailto:hello@smsquare.studio">
-                SMsquare@2026
+              <a className="text-2xl md:text-4xl font-serif hover:italic transition-all" href="mailto:smsquare123456@gmail.com">
+                smsquare123456@gmail.com
               </a>
             </div>
             <div className="mt-24 flex gap-8">
@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="editorial-hr opacity-20 mb-8"></div>
         <div className="flex flex-col md:flex-row justify-between items-center text-[9px] uppercase tracking-wider sm:tracking-widest text-neutral-500 gap-4 text-center md:text-left">
           <p className="leading-relaxed">© 2026 SM-SQUARE Collective. <br className="sm:hidden" /> Crafted by talented student creators.</p>
-          <p className="mt-2 md:mt-0">Zurich / Geneva / Remote</p>
+          <p className="mt-2 md:mt-0">Visakhapatnam / India / Remote</p>
         </div>
       </div>
     </footer>

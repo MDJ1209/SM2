@@ -11,6 +11,10 @@
   --tracking-widest: 0.25em;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -21,6 +25,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 ::selection {
@@ -61,4 +66,75 @@ body {
   height: 1px;
   background-color: #e5e5e5;
   width: 100%;
+}
+
+/* Prevents the page from height jumping */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+/* Forces the browser to hand over scroll control */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Stops scroll-chaining on elements where you want native scrolling (like a map or modal) */
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Handles states when you pause Lenis programmatically */
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Optional: Prevents iframes from hijacking the wheel event as you scroll past them */
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Custom rotating border shine classes for Services cards */
+.shine-card-silver,
+.shine-card-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-card-silver::before,
+.shine-card-gold::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px; /* Narrow width to make it a distinct sweeping beam */
+  height: 180%; /* Tall height to span beyond the corners */
+  transform: translate(-50%, -50%) rotate(0deg);
+  transform-origin: center center;
+  animation: rotBGimg 3s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+
+.shine-card-silver::before {
+  background-image: linear-gradient(180deg, #ffffff, #0a0a0a, #ffffff);
+}
+
+.shine-card-gold::before {
+  background-image: linear-gradient(180deg, #d4af37, #0a0a0a, #d4af37);
+}
+
+/* Speeds up rotation on hover */
+.shine-card-silver:hover::before,
+.shine-card-gold:hover::before {
+  animation-duration: 1.8s;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }

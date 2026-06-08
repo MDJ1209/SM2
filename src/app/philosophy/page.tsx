@@ -9,11 +9,11 @@ const pillars = [
   {
     num: "02",
     title: "Extreme Craftsmanship",
-    desc: "For our collective, code is not just execution; it is an architectural art. We write modular, clean, and highly performant codebases designed to scale seamlessly under heavy workloads, treated with the meticulous precision of swiss-made machinery."
+    desc: "For our collective, code is not just execution; it is an architectural art. We write modular, clean, and highly performant codebases designed to scale seamlessly under heavy workloads, treated with the meticulous precision of advanced engineering systems."
   },
   {
     num: "03",
-    title: "Swiss Aesthetic Precision",
+    title: "Minimalist Design Precision",
     desc: "Our visual identity is defined by understated luxury, structural grid methodologies, and typographic discipline. We design digital interfaces that are quiet yet powerful—refining every pixel until only the absolute essential remains."
   },
   {
