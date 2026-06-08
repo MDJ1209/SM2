@@ -261,7 +261,6 @@ export default function Portfolio() {
                       alt={filteredProjects[currentSlide].title}
                       fill
                       className="object-cover pointer-events-none"
-                      unoptimized
                     />
 
                     {/* Semi-transparent dark gradient overlay */}
@@ -388,7 +387,6 @@ export default function Portfolio() {
                       alt={project.title}
                       fill
                       className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
-                      unoptimized
                     />
 
                     {/* Elegant Glassmorphism Overlay */}

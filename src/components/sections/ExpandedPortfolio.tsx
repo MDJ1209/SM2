@@ -152,7 +152,6 @@ export default function ExpandedPortfolio() {
                       alt={project.title} 
                       fill 
                       className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-                      unoptimized
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
                   </div>
