@@ -13,6 +13,7 @@ interface Project {
   description: string;
   tags: string[];
   filterTag: string;
+  link: string;
 }
 
 const projects: Project[] = [
@@ -24,6 +25,7 @@ const projects: Project[] = [
     description: "A premium clinical wellness portal connecting patients with specialized medical advisors and real-time prescription tracking. Built with clinical-grade security and advanced WebGL interactions.",
     tags: ["Clinical WebGL", "Patient Portal", "Next.js"],
     filterTag: "Health & SaaS",
+    link: "https://medbud-ss-oy23.vercel.app/",
   },
   {
     title: "Hotel Ocean Blue",
@@ -33,6 +35,7 @@ const projects: Project[] = [
     description: "Bespoke digital booking system and property guide for an ultra-luxury Maldives oceanfront resort, showcasing immersive WebGL experiences.",
     tags: ["Spatial WebGL", "Real-Time Booking", "GSAP Animations"],
     filterTag: "Luxury & Spatial",
+    link: "https://ocean-blue-ashen.vercel.app/",
   },
   {
     title: "Amaravati Conventions",
@@ -42,6 +45,7 @@ const projects: Project[] = [
     description: "A digital identity and interactive spatial seat-planning application for India's premier architectural exhibition center.",
     tags: ["3D Seat Planner", "Responsive Grid", "PostgreSQL"],
     filterTag: "Luxury & Spatial",
+    link: "https://mdj1209.github.io/XSCADE-Amaravathi_Conventions/",
   },
   {
     title: "Pollocks School",
@@ -51,6 +55,7 @@ const projects: Project[] = [
     description: "A state-of-the-art interactive learning management platform and dashboard designed for a prestigious international academy.",
     tags: ["LMS Ecosystem", "Interactive Stats", "Framer Motion"],
     filterTag: "Platforms & EdTech",
+    link: "https://pollocks-nu.vercel.app/",
   },
   {
     title: "Easy-Variants",
@@ -60,6 +65,7 @@ const projects: Project[] = [
     description: "An advanced visual product variant builder SaaS that allows merchants to easily scale e-commerce options with zero-lag performance.",
     tags: ["Visual Node Editor", "E-commerce Engine", "Shopify API"],
     filterTag: "Health & SaaS",
+    link: "https://easy-variants-3mla.vercel.app/",
   },
   {
     title: "Loyal-Daddy",
@@ -69,6 +75,7 @@ const projects: Project[] = [
     description: "An exclusive, editorial streetwear lookbook and gamified customer loyalty platform blending fashion drops with community rewards.",
     tags: ["Creative Direction", "Loyalty Gamification", "Tailwind v4"],
     filterTag: "Luxury & Spatial",
+    link: "https://loyal-dad-six.vercel.app/",
   }
 ];
 
@@ -145,7 +152,7 @@ export default function ExpandedPortfolio() {
                 className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-24 items-center`}
               >
                 {/* Image Section */}
-                <div className="w-full lg:w-3/5 group relative cursor-pointer">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full lg:w-3/5 group relative cursor-pointer block">
                   <div className="relative aspect-video lg:aspect-[4/3] w-full overflow-hidden rounded-xl border border-white/10 bg-neutral-900/50">
                     <Image 
                       src={project.image} 
@@ -155,7 +162,7 @@ export default function ExpandedPortfolio() {
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
                   </div>
-                </div>
+                </a>
 
                 {/* Content Section */}
                 <div className="w-full lg:w-2/5 flex flex-col justify-center">
@@ -188,7 +195,9 @@ export default function ExpandedPortfolio() {
                   </div>
 
                   <a 
-                    href="#explore"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group/btn inline-flex items-center gap-4 text-xs uppercase tracking-widest font-semibold text-white transition-colors duration-300 w-max"
                   >
                     Explore Case Study

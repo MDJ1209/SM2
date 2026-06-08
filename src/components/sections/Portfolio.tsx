@@ -15,6 +15,7 @@ interface Project {
   filterTag: string;
   span: string;
   aspect: string;
+  link: string;
 }
 
 const projects: Project[] = [
@@ -28,6 +29,7 @@ const projects: Project[] = [
     filterTag: "Health & SaaS",
     span: "col-span-12 md:col-span-7",
     aspect: "aspect-[4/5]",
+    link: "https://medbud-ss-oy23.vercel.app/",
   },
   {
     title: "Hotel Ocean Blue",
@@ -39,6 +41,7 @@ const projects: Project[] = [
     filterTag: "Luxury & Spatial",
     span: "col-span-12 md:col-span-4 md:col-start-9 md:mt-32",
     aspect: "aspect-[3/4]",
+    link: "https://ocean-blue-ashen.vercel.app/",
   },
   {
     title: "Amaravati Conventions",
@@ -50,6 +53,7 @@ const projects: Project[] = [
     filterTag: "Luxury & Spatial",
     span: "col-span-12 md:col-span-5 md:mt-[-8%]",
     aspect: "aspect-[4/3]",
+    link: "https://mdj1209.github.io/XSCADE-Amaravathi_Conventions/",
   },
   {
     title: "Pollocks School",
@@ -61,6 +65,7 @@ const projects: Project[] = [
     filterTag: "Platforms & EdTech",
     span: "col-span-12 md:col-span-6 md:col-start-7",
     aspect: "aspect-video",
+    link: "https://pollocks-nu.vercel.app/",
   },
   {
     title: "Easy-Variants",
@@ -72,6 +77,7 @@ const projects: Project[] = [
     filterTag: "Health & SaaS",
     span: "col-span-12 md:col-span-6 md:mt-12",
     aspect: "aspect-square",
+    link: "https://easy-variants-3mla.vercel.app/",
   },
   {
     title: "Loyal-Daddy",
@@ -83,6 +89,7 @@ const projects: Project[] = [
     filterTag: "Luxury & Spatial",
     span: "col-span-12 md:col-span-5 md:col-start-8 md:mt-[-12%]",
     aspect: "aspect-[3/4]",
+    link: "https://loyal-dad-six.vercel.app/",
   }
 ];
 
@@ -254,6 +261,7 @@ export default function Portfolio() {
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={0.4}
                     onDragEnd={handleDragEnd}
+                    onClick={() => window.open(filteredProjects[currentSlide].link, '_blank')}
                     className="absolute inset-0 cursor-grab active:cursor-grabbing w-full h-full flex flex-col justify-end"
                   >
                     <Image
@@ -377,6 +385,7 @@ export default function Portfolio() {
                   exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.4 } }}
                   onMouseEnter={() => setHoveredIndex(originalIndex)}
                   onMouseLeave={() => setHoveredIndex(null)}
+                  onClick={() => window.open(project.link, '_blank')}
                   className="group relative cursor-pointer w-full"
                   data-purpose="project-card"
                 >
