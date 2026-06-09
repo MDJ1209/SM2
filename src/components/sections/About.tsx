@@ -45,7 +45,7 @@ export default function About() {
 
   return (
     <section className="py-20 md:py-32 lg:py-48 border-t border-white/10 relative z-10" id="about">
-      <div className="max-w-[1800px] mx-auto px-8">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -75,7 +75,7 @@ export default function About() {
           <div className="col-span-12 lg:col-span-7 lg:pl-16 mt-8 lg:mt-0 flex flex-col justify-between">
             <motion.div variants={itemVariants} className="space-y-6">
               <p className="text-xl md:text-2xl font-light text-white/90 leading-relaxed font-serif italic">
-                SM² is a freelance design and development platform powered by a group of talented and experienced  student creators from Vizag. We have built high-performance websites,  apps, and digital solutions for real clients, proving that student-led teams can deliver top-tier results.
+                DUDEE is a freelance design and development platform powered by a group of talented and experienced  student creators from Vizag. We have built high-performance websites,  apps, and digital solutions for real clients, proving that student-led teams can deliver top-tier results.
               </p>
             </motion.div>
 

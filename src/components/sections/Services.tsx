@@ -120,7 +120,7 @@ export default function Services() {
 
   return (
     <section className="py-20 md:py-32 relative z-10 border-t border-white/10" id="services">
-      <div className="max-w-[1800px] mx-auto px-8">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-8">
 
         {/* Header */}
         <motion.div
@@ -238,7 +238,7 @@ export default function Services() {
         >
           <button
             onClick={() => setIsModalOpen(true)}
-            className="group relative overflow-hidden border border-white/20 rounded-full px-8 py-4 hover:border-white transition-all duration-500 text-white flex items-center gap-4 cursor-pointer bg-transparent"
+            className="group relative overflow-hidden border border-white/20 rounded-full px-4 md:px-8 py-4 hover:border-white transition-all duration-500 text-white flex items-center gap-4 cursor-pointer bg-transparent"
           >
             <span className="relative z-10 text-sm tracking-widest uppercase font-medium group-hover:text-black transition-colors duration-500">
               View All Domains

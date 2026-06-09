@@ -28,7 +28,7 @@ export default function ServicesPage() {
 
         <ExpandedServices />
 
-        <section className="py-20 md:py-32 lg:py-48 px-8 text-center border-t border-white/10">
+        <section className="py-20 md:py-32 lg:py-48 px-4 md:px-8 text-center border-t border-white/10">
           <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif tracking-tighter mb-12 text-white">
             Ready to build with <br className="hidden md:block" /> next-generation creators?
           </h2>

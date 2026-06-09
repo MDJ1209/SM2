@@ -51,7 +51,7 @@ export default function Capabilities() {
 
   return (
     <section className="py-20 md:py-32 lg:py-48 border-t border-white/10 overflow-hidden">
-      <div className="max-w-[1800px] mx-auto px-8">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-8">
         <motion.div 
           initial="hidden"
           whileInView="show"

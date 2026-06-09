@@ -359,7 +359,7 @@ export default function ExpandedServices() {
 
   return (
     <section className="py-20 md:py-32 relative z-10" id="expanded-services">
-      <div className="max-w-[1800px] mx-auto px-8 relative">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-8 relative">
         <motion.div
           variants={containerVariants}
           initial="hidden"

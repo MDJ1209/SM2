@@ -16,7 +16,7 @@ export default function ProcessPage() {
         subtitle="A disciplined, highly collaborative workflow turning complex ideas into finished systems, with zero agency overhead."
       />
 
-      <section className="px-8 pb-32 max-w-[1800px] mx-auto">
+      <section className="px-4 md:px-8 pb-32 max-w-[1800px] mx-auto">
         <div className="flex flex-col gap-24 relative before:absolute before:inset-y-0 before:left-[11px] md:before:left-1/2 before:w-[1px] before:bg-neutral-200">
           {steps.map((step, idx) => (
             <div key={idx} className={`relative flex items-center md:justify-between w-full ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>

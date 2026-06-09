@@ -20,8 +20,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SM² | Student Creators Collective",
-  description: "SM² is a premium freelance platform and digital studio powered by an elite collective of talented college student creators.",
+  title: "DUDEE | Student Creators Collective",
+  description: "DUDEE is a premium freelance platform and digital studio powered by an elite collective of talented college student creators.",
 };
 
 export const viewport: Viewport = {

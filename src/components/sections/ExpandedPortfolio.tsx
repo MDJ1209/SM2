@@ -108,7 +108,7 @@ export default function ExpandedPortfolio() {
   };
 
   return (
-    <section className="px-8 py-20 md:py-32 max-w-[1800px] mx-auto" id="expanded-work">
+    <section className="px-4 md:px-8 py-20 md:py-32 max-w-[1800px] mx-auto" id="expanded-work">
       {/* Filter Navigation */}
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-20 md:mb-32">
         {categories.map((category) => (

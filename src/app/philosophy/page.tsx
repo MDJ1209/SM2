@@ -32,7 +32,7 @@ export default function PhilosophyPage() {
       />
 
       {/* Main Philosophy Manifesto */}
-      <section className="px-8 py-16 max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <section className="px-4 md:px-8 py-16 max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         <div className="lg:col-span-4">
           <span className="text-[10px] uppercase tracking-[0.5em] text-neutral-400 block mb-8">
             The Core Belief
@@ -48,13 +48,13 @@ export default function PhilosophyPage() {
             "We believe that the premium digital creations of tomorrow cannot be built using the bloated, sluggish corporate processes of yesterday."
           </p>
           <p className="text-lg font-light text-neutral-500 leading-relaxed mb-12">
-            SM² was founded to break the mold. As talented student creators, we have the unique advantage of active immersion in state-of-the-art design and computer science developments, while having already proved our engineering capabilities in real-world systems for top-tier companies. This platform is our vehicle to bring precision, performance, and uncompromised passion to every digital project.
+            DUDEE was founded to break the mold. As talented student creators, we have the unique advantage of active immersion in state-of-the-art design and computer science developments, while having already proved our engineering capabilities in real-world systems for top-tier companies. This platform is our vehicle to bring precision, performance, and uncompromised passion to every digital project.
           </p>
         </div>
       </section>
 
       {/* Pillars Grid */}
-      <section className="px-8 py-20 max-w-[1800px] mx-auto border-t border-neutral-100">
+      <section className="px-4 md:px-8 py-20 max-w-[1800px] mx-auto border-t border-neutral-100">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-20 md:gap-y-24">
           {pillars.map((pillar, i) => (
             <div key={i} className="group border-t border-neutral-200 pt-12">

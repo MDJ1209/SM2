@@ -20,8 +20,8 @@ export default function Home() {
             src="/home-img.jpg"
             alt=""
             fill
-            priority
-            quality={100}
+            loading="lazy"
+            quality={85}
             className="object-cover object-center"
             sizes="100vw"
           />

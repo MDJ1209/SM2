@@ -38,10 +38,10 @@ export default function InsightsPage() {
     <main className="min-h-screen">
       <PageHero 
         title="Insights"
-        subtitle="Thoughts, essays, and technical research from the talented student creators behind the SM² collective."
+        subtitle="Thoughts, essays, and technical research from the talented student creators behind the DUDEE collective."
       />
 
-      <section className="px-8 pb-32 max-w-[1800px] mx-auto">
+      <section className="px-4 md:px-8 pb-32 max-w-[1800px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
           {articles.map((article, idx) => (
             <article key={idx} className="group cursor-pointer flex flex-col h-full border border-neutral-100 p-8 hover:bg-neutral-50 transition-colors duration-500">

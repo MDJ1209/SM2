@@ -52,9 +52,9 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.15)]">
-        <div className="max-w-[1800px] mx-auto px-8 py-6 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold tracking-tighter text-white drop-shadow-sm z-50" data-purpose="logo" onClick={closeMenu}>
-            SM<sup className="text-xs">2</sup>
+        <div className="max-w-[1800px] mx-auto px-4 md:px-8 py-2 lg:py-3 flex justify-between items-center">
+          <Link href="/" className="text-xl font-bold tracking-tighter text-white drop-shadow-sm z-50 flex items-center" data-purpose="logo" onClick={closeMenu}>
+            <img src="/projects/logo.png" alt="DUDEE" className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[1.8] sm:scale-[2] md:scale-[2.2] origin-left" />
           </Link>
           <div className="hidden md:flex gap-12 text-[10px] uppercase tracking-widest font-semibold text-white/90">
             {menuLinks.map((link) => (
@@ -65,7 +65,7 @@ export default function Navbar() {
           </div>
           <button
             onClick={toggleMenu}
-            className="md:hidden z-50 text-[10px] uppercase tracking-widest cursor-pointer text-white/90 flex items-center gap-3 focus:outline-none bg-transparent border-0"
+            className="md:hidden z-50 text-[10px] uppercase tracking-widest cursor-pointer text-white/90 flex items-center gap-3 focus:outline-none bg-transparent border-0 min-w-[44px] min-h-[44px] justify-end"
             aria-label={isOpen ? "Close Menu" : "Open Menu"}
           >
             <span className="font-semibold text-[10px] tracking-widest">{isOpen ? 'CLOSE' : 'MENU'}</span>
@@ -97,7 +97,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl md:hidden flex flex-col justify-center px-8"
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl md:hidden flex flex-col justify-center px-4 md:px-8"
           >
             {/* Background design elements */}
             <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
@@ -114,7 +114,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={closeMenu}
-                    className="font-serif text-5xl text-white/90 hover:text-white block hover:italic transition-all duration-300"
+                    className="font-serif text-4xl sm:text-5xl text-white/90 hover:text-white block hover:italic transition-all duration-300"
                   >
                     {link.name}
                   </Link>
@@ -123,8 +123,8 @@ export default function Navbar() {
 
               <motion.div variants={itemVariants} className="pt-8 border-t border-white/10 mt-8 space-y-4">
                 <span className="text-[10px] uppercase tracking-widest text-neutral-500 block">General Inquiries</span>
-                <a href="mailto:smsquare123456@gmail.com" className="text-lg text-white/80 hover:text-white transition-colors font-light break-all">
-                  smsquare123456@gmail.com
+                <a href="mailto:dudeepartners@gmail.com" className="text-lg text-white/80 hover:text-white transition-colors font-light break-all">
+                  dudeepartners@gmail.com
                 </a>
               </motion.div>
             </motion.div>

@@ -23,12 +23,12 @@ export async function POST(request: Request) {
       },
     });
 
-    const recipient = process.env.CONTACT_RECEIVE_EMAIL || 'mdjani1209@gmail.com';
+    const recipient = 'dudeepartners@gmail.com';
     const copyRecipient = 'mdjani1209@gmail.com';
 
     // Compose the email
     const mailOptions = {
-      from: `"SM² Website" <${process.env.SMTP_EMAIL}>`,
+      from: `"DUDEE Website" <${process.env.SMTP_EMAIL}>`,
       to: recipient,
       ...(recipient.toLowerCase() !== copyRecipient.toLowerCase() && { cc: copyRecipient }),
       replyTo: email,
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0a; color: #e0e0e0; border-radius: 12px; overflow: hidden; border: 1px solid #222;">
           <div style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a); padding: 32px; border-bottom: 1px solid #222;">
             <h1 style="margin: 0 0 4px 0; font-size: 22px; color: #ffffff; font-weight: 600;">New Project Inquiry</h1>
-            <p style="margin: 0; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 2px;">SM² Contact Form</p>
+            <p style="margin: 0; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 2px;">DUDEE Contact Form</p>
           </div>
           
           <div style="padding: 32px;">
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
           </div>
           
           <div style="padding: 20px 32px; background: #111; border-top: 1px solid #222; text-align: center;">
-            <p style="margin: 0; font-size: 11px; color: #555;">Sent from SM² website contact form • ${new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            <p style="margin: 0; font-size: 11px; color: #555;">Sent from DUDEE website contact form • ${new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
           </div>
         </div>
       `,

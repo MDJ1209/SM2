@@ -13,25 +13,25 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "We were amazed by the speed, talent, and professional execution of this collective of student creators. SM² completely revolutionized our medical workflow into a gorgeous, HIPAA-compliant work of art.",
+    quote: "We were amazed by the speed, talent, and professional execution of this collective of student creators. DUDEE completely revolutionized our medical workflow into a gorgeous, HIPAA-compliant work of art.",
     author: "Rohan Desai",
     role: "Chief Executive",
     company: "Medbud Health Portal",
   },
   {
-    quote: "The WebGL reservation experience built by SM²'s freelance collective drove our luxury room bookings up by 140% in three months. Unparalleled attention to detail, academic-grade innovation, and absolute precision.",
+    quote: "The WebGL reservation experience built by DUDEE's freelance collective drove our luxury room bookings up by 140% in three months. Unparalleled attention to detail, academic-grade innovation, and absolute precision.",
     author: "Ananya Sharma",
     role: "General Manager",
     company: "Ocean Blue Resorts",
   },
   {
-    quote: "Elite streetwear demands elite digital spaces. Working with SM²'s talented student creators was a revelation—they bypassed the typical agency layers to deliver an immersive loyalty platform that perfectly represents our culture.",
+    quote: "Elite streetwear demands elite digital spaces. Working with DUDEE's talented student creators was a revelation—they bypassed the typical agency layers to deliver an immersive loyalty platform that perfectly represents our culture.",
     author: "Vikram Reddy",
     role: "Creative Director",
     company: "Loyal-Daddy Apparel",
   },
   {
-    quote: "Absolute engineering wizardry. Bypassing bloated corporate agencies and working directly with the student creators at SM² allowed us to scale 10,000+ variants on Shopify with zero lag.",
+    quote: "Absolute engineering wizardry. Bypassing bloated corporate agencies and working directly with the student creators at DUDEE allowed us to scale 10,000+ variants on Shopify with zero lag.",
     author: "Priya Patel",
     role: "Chief Technology Officer",
     company: "Easy-Variants SaaS",
@@ -121,7 +121,7 @@ export default function Validation() {
   };
 
   return (
-    <section className="py-20 md:py-32 lg:py-48 px-8 border-t border-white/10 relative overflow-hidden" id="validation">
+    <section className="py-20 md:py-32 lg:py-48 px-4 md:px-8 border-t border-white/10 relative overflow-hidden" id="validation">
       {/* Background soft ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-white/[0.02] rounded-full blur-[150px] pointer-events-none" />
 

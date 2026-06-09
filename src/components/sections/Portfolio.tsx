@@ -207,7 +207,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section className="px-8 py-20 md:py-32 max-w-[1800px] mx-auto border-t border-white/10" id="work">
+    <section className="px-4 md:px-8 py-20 md:py-32 max-w-[1800px] mx-auto border-t border-white/10" id="work">
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 pt-8 md:pt-16 gap-8">
         <div>

@@ -29,7 +29,7 @@ export default function WorkPage() {
         <ExpandedPortfolio />
         
         {/* CTA Section */}
-        <div className="py-32 px-8 text-center border-t border-white/10 max-w-[1800px] mx-auto">
+        <div className="py-32 px-4 md:px-8 text-center border-t border-white/10 max-w-[1800px] mx-auto">
           <h3 className="font-serif text-4xl mb-8">Ready to start your next project?</h3>
           <a href="/contact" className="group inline-flex items-center gap-4 text-white hover:text-white/80 transition-colors">
             <span className="text-[10px] uppercase tracking-widest font-bold">Contact Us</span>

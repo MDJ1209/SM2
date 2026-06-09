@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Manifesto() {
   return (
-    <section className="py-20 md:py-40 lg:py-64 text-center px-8 border-t border-white/10 overflow-hidden">
+    <section className="py-20 md:py-40 lg:py-64 text-center px-4 md:px-8 border-t border-white/10 overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 60, scale: 0.95, filter: 'blur(10px)' }}
         whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
@@ -20,7 +20,7 @@ export default function Manifesto() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-[10px] uppercase tracking-[0.4em] text-white/40 mb-12 block"
         >
-          The SM² Philosophy
+          The DUDEE Philosophy
         </motion.span>
         <blockquote className="font-serif text-2xl md:text-5xl lg:text-6xl italic leading-tight mb-12 md:mb-16 text-white drop-shadow-xl">
           &quot;Order creates clarity, and clarity creates confidence. We strip away the redundant to reveal the essential.&quot;

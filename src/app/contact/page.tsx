@@ -98,7 +98,7 @@ export default function ContactPage() {
           theme="dark"
         />
 
-        <section className="px-8 py-20 pb-32 max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 relative z-10">
+        <section className="px-4 md:px-8 py-16 md:py-20 pb-24 md:pb-32 max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10">
           {/* Contact Form */}
           <div>
             {status === 'success' ? (
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
-                  className="group relative overflow-hidden border border-white/20 rounded-full px-8 py-3 text-white hover:border-white transition-all duration-500 inline-block cursor-pointer bg-transparent mt-4"
+                  className="group relative overflow-hidden border border-white/20 rounded-full px-4 md:px-8 py-3 text-white hover:border-white transition-all duration-500 inline-block cursor-pointer bg-transparent mt-4"
                 >
                   <span className="relative z-10 text-[10px] uppercase tracking-widest font-semibold group-hover:text-black transition-colors duration-500">
                     Submit Another Request
@@ -123,21 +123,21 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-12">
+              <form onSubmit={handleSubmit} className="space-y-8 md:space-y-12">
                 {/* Row 1: Name & Email */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                   <div className="relative group">
-                    <input type="text" id="name" required value={name} onChange={(e) => setName(e.target.value)} className="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-white peer text-white placeholder-transparent" placeholder="Name" />
-                    <label htmlFor="name" className="absolute left-0 top-4 text-white/50 transition-all peer-focus:-top-4 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:-top-4 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Your Name</label>
+                    <input type="text" id="name" required value={name} onChange={(e) => setName(e.target.value)} className="w-full bg-transparent border-b border-white/20 py-5 focus:outline-none focus:border-white peer text-base text-white placeholder-transparent" placeholder="Name" />
+                    <label htmlFor="name" className="absolute left-0 top-4 text-white/50 transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Your Name</label>
                   </div>
                   <div className="relative group">
-                    <input type="email" id="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-white peer text-white placeholder-transparent" placeholder="Email" />
-                    <label htmlFor="email" className="absolute left-0 top-4 text-white/50 transition-all peer-focus:-top-4 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:-top-4 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Email Address</label>
+                    <input type="email" id="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-transparent border-b border-white/20 py-5 focus:outline-none focus:border-white peer text-base text-white placeholder-transparent" placeholder="Email" />
+                    <label htmlFor="email" className="absolute left-0 top-4 text-white/50 transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Email Address</label>
                   </div>
                 </div>
 
                 {/* Row 2: Organization & Project Domain */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 z-20 relative">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 z-20 relative">
                   <div className="relative group">
                     <CustomSelect
                       id="organization"
@@ -161,7 +161,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Row 3: Estimated Budget & Contact Details */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
                   {/* Budget Choice & Selector */}
                   <div className="space-y-8">
                     <div className="space-y-4">
@@ -211,10 +211,10 @@ export default function ContactPage() {
                               required={hasBudget === true} 
                               value={budget} 
                               onChange={(e) => setBudget(e.target.value)} 
-                              className="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-white peer text-white placeholder-transparent" 
+                              className="w-full bg-transparent border-b border-white/20 py-5 focus:outline-none focus:border-white peer text-base text-white placeholder-transparent" 
                               placeholder="Estimated Budget" 
                             />
-                            <label htmlFor="budget" className="absolute left-0 top-8 text-white/50 transition-all peer-focus:top-0 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:top-0 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Estimated Budget (Optional)</label>
+                            <label htmlFor="budget" className="absolute left-0 top-8 text-white/50 transition-all peer-focus:top-0 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:top-0 peer-valid:text-xs peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Estimated Budget (Optional)</label>
                           </div>
                           <BudgetLock value={budget} onChange={setBudget} />
                         </motion.div>
@@ -224,15 +224,15 @@ export default function ContactPage() {
 
                   {/* Contact details */}
                   <div className="relative group pt-4 md:pt-0">
-                    <input type="text" id="contact" required value={contact} onChange={(e) => setContact(e.target.value)} className="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-white peer text-white placeholder-transparent" placeholder="Contact Details" />
-                    <label htmlFor="contact" className="absolute left-0 top-4 text-white/50 transition-all peer-focus:-top-4 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:-top-4 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Contact Number / WhatsApp</label>
+                    <input type="text" id="contact" required value={contact} onChange={(e) => setContact(e.target.value)} className="w-full bg-transparent border-b border-white/20 py-5 focus:outline-none focus:border-white peer text-base text-white placeholder-transparent" placeholder="Contact Details" />
+                    <label htmlFor="contact" className="absolute left-0 top-4 text-white/50 transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Contact Number / WhatsApp</label>
                   </div>
                 </div>
 
                 {/* Description */}
                 <div className="relative group">
-                  <textarea id="description" required rows={4} value={description} onChange={(e) => setDescription(e.target.value)} className="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-white peer resize-none text-white placeholder-transparent" placeholder="Description"></textarea>
-                  <label htmlFor="description" className="absolute left-0 top-4 text-white/50 transition-all peer-focus:-top-4 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:-top-4 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Project Description</label>
+                  <textarea id="description" required rows={4} value={description} onChange={(e) => setDescription(e.target.value)} className="w-full bg-transparent border-b border-white/20 py-5 focus:outline-none focus:border-white peer resize-none text-base text-white placeholder-transparent" placeholder="Description"></textarea>
+                  <label htmlFor="description" className="absolute left-0 top-4 text-white/50 transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:uppercase peer-valid:tracking-widest peer-valid:text-white/70">Project Description</label>
                 </div>
 
                 {/* Error Message */}
@@ -246,7 +246,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className={`group relative overflow-hidden border border-white/20 rounded-full px-12 py-5 text-white hover:border-white transition-all duration-500 inline-block w-full md:w-auto text-center cursor-pointer bg-transparent ${status === 'loading' ? 'opacity-60 pointer-events-none' : ''}`}
+                  className={`group relative overflow-hidden border border-white/20 rounded-full px-4 md:px-8 py-4 md:px-12 md:py-5 text-white hover:border-white transition-all duration-500 inline-block w-full md:w-auto text-center cursor-pointer bg-transparent ${status === 'loading' ? 'opacity-60 pointer-events-none' : ''}`}
                 >
                   <span className="relative z-10 text-[10px] uppercase tracking-widest font-semibold group-hover:text-black transition-colors duration-500">
                     {status === 'loading' ? 'Sending...' : 'Submit Request'}
@@ -261,7 +261,7 @@ export default function ContactPage() {
           <div className="lg:pl-24 lg:border-l border-white/10 flex flex-col justify-center">
             <div className="mb-16">
               <h3 className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-4 block">Direct Enquiries</h3>
-              <a href="mailto:smsquare123456@gmail.com" className="text-3xl font-serif text-white hover:italic transition-all duration-300 break-all">smsquare123456@gmail.com</a>
+              <a href="mailto:dudeepartners@gmail.com" className="text-3xl font-serif text-white hover:italic transition-all duration-300 break-all">dudeepartners@gmail.com</a>
             </div>
             
             <div className="mb-16">
