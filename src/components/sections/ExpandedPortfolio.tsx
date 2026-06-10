@@ -168,6 +168,9 @@ export default function ExpandedPortfolio() {
                       src={project.image} 
                       alt={project.title} 
                       fill 
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      quality={80}
+                      loading="lazy"
                       className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />

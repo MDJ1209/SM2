@@ -192,7 +192,7 @@ export default function Services() {
                         loop
                         muted
                         playsInline
-                        preload="auto"
+                        preload="none"
                         className="w-full h-full object-cover scale-[1.2] transform origin-center"
                       >
                         <source src={videoPath} type="video/mp4" />

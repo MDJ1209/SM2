@@ -279,6 +279,9 @@ export default function Portfolio() {
                       src={filteredProjects[currentSlide].image}
                       alt={filteredProjects[currentSlide].title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      quality={70}
+                      loading="lazy"
                       className="object-cover pointer-events-none"
                     />
 
@@ -412,6 +415,9 @@ export default function Portfolio() {
                         src={project.image}
                         alt={project.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={75}
+                        loading="lazy"
                         className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
                       />
 
