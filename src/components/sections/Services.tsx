@@ -162,36 +162,61 @@ export default function Services() {
               }
             };
 
+            const getVideoPath = (id: number) => {
+              switch (id) {
+                case 1: return '/projects/card-videos/webdev-card.mp4';
+                case 2: return '/projects/card-videos/app-dev.mp4';
+                case 5: return '/projects/card-videos/college-dev.mp4';
+                default: return null;
+              }
+            };
+            const videoPath = getVideoPath(domain.id);
+
             return (
               <motion.div
                 key={domain.id}
                 variants={itemVariants}
-                className={`group relative p-[2px] rounded-[24px] transition-all duration-700 h-full shadow-lg overflow-hidden ${
-                  isSpecial
+                className={`group relative p-[2px] rounded-[24px] transition-all duration-700 h-full shadow-lg overflow-hidden ${isSpecial
                     ? 'shine-card-gold hover:shadow-[0_20px_50px_rgba(212,175,55,0.12)]'
                     : 'shine-card-silver hover:shadow-[0_20px_50px_rgba(255,255,255,0.06)]'
-                }`}
+                  }`}
               >
                 {/* Inner Card Content */}
                 <div className="relative z-10 h-full bg-[#0a0a0a]/90 backdrop-blur-2xl rounded-[22px] p-8 overflow-hidden flex flex-col justify-between min-h-[420px]">
-                  
+
+                  {/* Video Background */}
+                  {videoPath && (
+                    <div className="absolute inset-0 z-0 overflow-hidden opacity-17 group-hover:opacity-32 transition-opacity duration-700 pointer-events-none">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        className="w-full h-full object-cover scale-[1.2] transform origin-center"
+                      >
+                        <source src={videoPath} type="video/mp4" />
+                      </video>
+                      {/* Gradient overlay to ensure text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
+                    </div>
+                  )}
+
                   {/* Large Background SVG Watermark */}
-                  <div className={`absolute -right-12 -bottom-12 w-64 h-64 transition-all duration-700 pointer-events-none transform group-hover:scale-110 group-hover:-rotate-12 ${
-                    isSpecial
+                  <div className={`absolute -right-12 -bottom-12 w-64 h-64 transition-all duration-700 pointer-events-none transform group-hover:scale-110 group-hover:-rotate-12 ${videoPath ? 'opacity-0' : (isSpecial
                       ? 'text-[#d4af37]/[0.02] group-hover:text-[#d4af37]/[0.06]'
-                      : 'text-white/[0.02] group-hover:text-white/[0.06]'
-                  }`}>
+                      : 'text-white/[0.02] group-hover:text-white/[0.06]')
+                    }`}>
                     {getBgIcon(domain.id)}
                   </div>
 
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Header row: Icon & Badge */}
                     <div className="flex items-center justify-between mb-6">
-                      <div className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-500 shadow-sm transform group-hover:scale-110 group-hover:rotate-3 ${
-                        isSpecial
+                      <div className={`w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-500 shadow-sm transform group-hover:scale-110 group-hover:rotate-3 ${isSpecial
                           ? 'bg-[#d4af37]/10 text-[#d4af37] group-hover:bg-[#d4af37]/20 group-hover:text-[#d4af37]'
                           : 'bg-white/5 text-white/80 group-hover:text-white group-hover:bg-white/10'
-                      }`}>
+                        }`}>
                         {domain.icon}
                       </div>
                       {isSpecial && (
@@ -200,23 +225,21 @@ export default function Services() {
                         </span>
                       )}
                     </div>
-                    
-                    <h3 className={`text-xl md:text-2xl font-serif mb-6 transition-colors duration-500 ${
-                      isSpecial
+
+                    <h3 className={`text-xl md:text-2xl font-serif mb-6 transition-colors duration-500 ${isSpecial
                         ? 'text-[#d4af37] group-hover:text-[#d4af37]/80'
                         : 'text-white group-hover:text-zinc-200'
-                    }`}>
+                      }`}>
                       {domain.title}
                     </h3>
-                    
+
                     <ul className="space-y-3 flex-grow">
                       {domain.items.map((item, idx) => (
                         <li key={idx} className="text-sm md:text-base text-white/60 font-light flex items-start gap-3">
-                          <span className={`mt-1 block transition-colors ${
-                            isSpecial
+                          <span className={`mt-1 block transition-colors ${isSpecial
                               ? 'text-[#d4af37]/40 group-hover:text-[#d4af37]/80'
                               : 'text-white/20 group-hover:text-white/40'
-                          }`}>―</span>
+                            }`}>―</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -284,16 +307,15 @@ export default function Services() {
                 </div>
 
                 {/* Grid of all domains in premium boxes */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 overflow-y-auto pr-2 pb-8 custom-scrollbar">
+                <div data-lenis-prevent="true" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 overflow-y-auto pr-2 pb-8 custom-scrollbar">
                   {domains.map((domain) => {
                     const isSpecial = domain.id === 5;
 
                     return (
                       <motion.div
                         key={domain.id}
-                        layout
                         onClick={() => setActiveDetailDomain(domain)}
-                        className={`group flex flex-col bg-white/[0.02] rounded-2xl p-6 md:p-8 transition-all duration-500 hover:bg-white/[0.04] border relative overflow-hidden cursor-pointer select-none ${isSpecial
+                        className={`group flex flex-col justify-between min-h-[220px] bg-white/[0.02] rounded-2xl p-6 md:p-8 transition-all duration-500 hover:bg-white/[0.04] border relative overflow-hidden cursor-pointer select-none ${isSpecial
                           ? 'border-[#d4af37]/30 hover:border-[#d4af37]/60 shadow-[0_0_30px_rgba(212,175,55,0.03)] hover:shadow-[0_0_35px_rgba(212,175,55,0.08)]'
                           : 'border-white/10 hover:border-zinc-400/30 shadow-[0_0_30px_rgba(255,255,255,0.01)] hover:shadow-[0_0_35px_rgba(255,255,255,0.05)]'
                           }`}
@@ -313,21 +335,23 @@ export default function Services() {
                           <span>{isSpecial ? 'Popular' : 'Core'}</span>
                         </div>
 
-                        {/* Icon */}
-                        <div className={`mb-6 w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-500 ${isSpecial
-                          ? 'bg-[#d4af37]/10 text-[#d4af37] group-hover:bg-[#d4af37]/20'
-                          : 'bg-white/5 text-zinc-300 group-hover:bg-white/10 group-hover:text-white'
-                          }`}>
-                          {domain.icon}
-                        </div>
+                        <div>
+                          {/* Icon */}
+                          <div className={`mb-6 w-12 h-12 flex items-center justify-center rounded-xl transition-all duration-500 ${isSpecial
+                            ? 'bg-[#d4af37]/10 text-[#d4af37] group-hover:bg-[#d4af37]/20'
+                            : 'bg-white/5 text-zinc-300 group-hover:bg-white/10 group-hover:text-white'
+                            }`}>
+                            {domain.icon}
+                          </div>
 
-                        {/* Title */}
-                        <h4 className={`text-xl md:text-2xl font-serif transition-colors duration-500 mb-4 ${isSpecial
-                          ? 'text-[#d4af37] group-hover:text-[#d4af37]/80'
-                          : 'text-zinc-100 group-hover:text-white'
-                          }`}>
-                          {domain.title}
-                        </h4>
+                          {/* Title */}
+                          <h4 className={`text-xl md:text-2xl font-serif transition-colors duration-500 mb-4 ${isSpecial
+                            ? 'text-[#d4af37] group-hover:text-[#d4af37]/80'
+                            : 'text-zinc-100 group-hover:text-white'
+                            }`}>
+                            {domain.title}
+                          </h4>
+                        </div>
 
                         {/* Details Prompt Link */}
                         <div className="mt-auto pt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest transition-all duration-300 opacity-50 group-hover:opacity-100">
@@ -402,7 +426,7 @@ export default function Services() {
                         </div>
 
                         {/* Scrollable details */}
-                        <div className="overflow-y-auto flex-grow pr-2 pb-6 custom-scrollbar">
+                        <div data-lenis-prevent="true" className="overflow-y-auto flex-grow pr-2 pb-6 custom-scrollbar">
                           <h5 className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold mb-4">Included Services</h5>
                           <ul className="space-y-4">
                             {activeDetailDomain.items.map((item, idx) => (

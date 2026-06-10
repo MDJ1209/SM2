@@ -90,6 +90,18 @@ const projects: Project[] = [
     span: "col-span-12 md:col-span-5 md:col-start-8 md:mt-[-12%]",
     aspect: "aspect-[3/4]",
     link: "https://loyal-dad-six.vercel.app/",
+  },
+  {
+    title: "The Painted Muse",
+    category: "Cultural Arts Platform",
+    year: "2026",
+    image: "/projects/The-Painted-muse.png",
+    description: "A cultural platform connecting artists and users to discover state-wise art forms, purchase original artworks, and participate in interactive workshops.",
+    tags: ["Art Marketplace", "Workshops", "Cultural Discovery"],
+    filterTag: "Platforms & EdTech",
+    span: "col-span-12 md:col-span-7",
+    aspect: "aspect-[4/3]",
+    link: "https://the-painted-muse.onrender.com/",
   }
 ];
 
@@ -394,61 +406,61 @@ export default function Portfolio() {
                   data-purpose="project-card"
                 >
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
-                  {/* Image Container with Zoom & Hover Info Panels */}
-                  <div className="image-zoom-container bg-neutral-900/50 mb-8 relative overflow-hidden transition-all duration-700 border border-white/5 rounded-sm aspect-[4/3]">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
-                    />
+                    {/* Image Container with Zoom & Hover Info Panels */}
+                    <div className="image-zoom-container bg-neutral-900/50 mb-8 relative overflow-hidden transition-all duration-700 border border-white/5 rounded-sm aspect-[4/3]">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
+                      />
 
-                    {/* Elegant Glassmorphism Overlay */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: isHovered ? 1 : 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="absolute inset-0 bg-black/60 backdrop-blur-[3px] p-8 flex flex-col justify-between z-10"
-                    >
-                      {/* Top part: tags */}
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-[9px] uppercase tracking-widest px-2.5 py-1 bg-white/10 text-white/95 rounded-full border border-white/10 font-medium"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      {/* Bottom part: description & action button */}
-                      <div className="space-y-4">
-                        <p className="text-white/80 text-xs md:text-sm leading-relaxed font-light font-sans max-w-sm">
-                          {project.description}
-                        </p>
-                        <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-semibold text-white border-b border-white/30 pb-1 group/btn hover:border-white transition-colors duration-300">
-                          Explore Case Study
-                          <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                      {/* Elegant Glassmorphism Overlay */}
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: isHovered ? 1 : 0 }}
+                        transition={{ duration: 0.4 }}
+                        className="absolute inset-0 bg-black/60 backdrop-blur-[3px] p-8 flex flex-col justify-between z-10"
+                      >
+                        {/* Top part: tags */}
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-[9px] uppercase tracking-widest px-2.5 py-1 bg-white/10 text-white/95 rounded-full border border-white/10 font-medium"
+                            >
+                              {tag}
+                            </span>
+                          ))}
                         </div>
-                      </div>
-                    </motion.div>
-                  </div>
 
-                  {/* Metadata Row */}
-                  <div className="flex justify-between items-baseline border-t border-white/20 pt-4 relative overflow-hidden">
-                    <div className="transition-transform duration-500 group-hover:translate-x-1">
-                      <h3 className="font-serif text-2xl text-white flex items-center gap-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-[10px] uppercase tracking-widest text-white/50 mt-1">
-                        {project.category}
-                      </p>
+                        {/* Bottom part: description & action button */}
+                        <div className="space-y-4">
+                          <p className="text-white/80 text-xs md:text-sm leading-relaxed font-light font-sans max-w-sm">
+                            {project.description}
+                          </p>
+                          <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-semibold text-white border-b border-white/30 pb-1 group/btn hover:border-white transition-colors duration-300">
+                            Explore Case Study
+                            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                          </div>
+                        </div>
+                      </motion.div>
                     </div>
-                    <span className="font-serif italic text-white/40 text-sm transition-colors duration-500 group-hover:text-white/85">
-                      {project.year}
-                    </span>
-                  </div>
+
+                    {/* Metadata Row */}
+                    <div className="flex justify-between items-baseline border-t border-white/20 pt-4 relative overflow-hidden">
+                      <div className="transition-transform duration-500 group-hover:translate-x-1">
+                        <h3 className="font-serif text-2xl text-white flex items-center gap-2">
+                          {project.title}
+                        </h3>
+                        <p className="text-[10px] uppercase tracking-widest text-white/50 mt-1">
+                          {project.category}
+                        </p>
+                      </div>
+                      <span className="font-serif italic text-white/40 text-sm transition-colors duration-500 group-hover:text-white/85">
+                        {project.year}
+                      </span>
+                    </div>
                   </a>
                 </motion.div>
               );

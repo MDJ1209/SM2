@@ -76,6 +76,16 @@ const projects: Project[] = [
     tags: ["Creative Direction", "Loyalty Gamification", "Tailwind v4"],
     filterTag: "Luxury & Spatial",
     link: "https://loyal-dad-six.vercel.app/",
+  },
+  {
+    title: "The Painted Muse",
+    category: "Cultural Arts Platform",
+    year: "2025",
+    image: "/projects/The-Painted-muse.png",
+    description: "A cultural platform connecting artists and users to discover state-wise art forms, purchase original artworks, and participate in interactive workshops.",
+    tags: ["Art Marketplace", "Workshops", "Cultural Discovery"],
+    filterTag: "Platforms & EdTech",
+    link: "https://the-painted-muse.onrender.com/",
   }
 ];
 
