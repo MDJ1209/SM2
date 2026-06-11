@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
@@ -55,7 +54,7 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.15)]">
         <div className="max-w-[1800px] mx-auto px-4 md:px-8 py-2 lg:py-3 flex justify-between items-center">
           <Link href="/" className="text-xl font-bold tracking-tighter text-white drop-shadow-sm z-50 flex items-center" data-purpose="logo" onClick={closeMenu}>
-            <Image src="/projects/logo.png" alt="DUDEE" width={240} height={80} priority className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[1.8] sm:scale-[2] md:scale-[2.2] origin-left md:translate-y-1 lg:translate-y-1.5" />
+            <img src="/projects/logo.png" alt="DUDEE" className="h-8 sm:h-10 md:h-12 w-auto object-contain scale-[1.8] sm:scale-[2] md:scale-[2.2] origin-left" />
           </Link>
           <div className="hidden md:flex gap-12 text-[10px] uppercase tracking-widest font-semibold text-white/90">
             {menuLinks.map((link) => (
