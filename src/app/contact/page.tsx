@@ -264,20 +264,11 @@ export default function ContactPage() {
               <a href="mailto:dudeepartners@gmail.com" className="text-3xl font-serif text-white hover:italic transition-all duration-300 break-all">dudeepartners@gmail.com</a>
             </div>
             
-            <div className="mb-16">
+            <div>
               <h3 className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-4 block">Platform Hub</h3>
               <p className="text-xl font-light text-white/60 leading-relaxed">
                 Vizag
               </p>
-            </div>
-
-            <div>
-              <h3 className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-4 block">Social</h3>
-              <div className="flex gap-6">
-                <a href="#" className="text-lg text-white hover:text-white/70 transition-colors">Twitter</a>
-                <a href="#" className="text-lg text-white hover:text-white/70 transition-colors">LinkedIn</a>
-                <a href="#" className="text-lg text-white hover:text-white/70 transition-colors">GitHub</a>
-              </div>
             </div>
           </div>
         </section>

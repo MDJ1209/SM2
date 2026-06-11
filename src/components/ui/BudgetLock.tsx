@@ -17,7 +17,7 @@ export default function BudgetLock({ value, onChange }: BudgetLockProps) {
     const numericValue = digits.join('');
     const intValue = parseInt(numericValue, 10);
     const symbol = '₹';
-    
+
     // Format number with Indian numbering system (en-IN)
     const formattedNumber = intValue.toLocaleString('en-IN');
     onChange(`${symbol} ${formattedNumber}`);
@@ -39,7 +39,7 @@ export default function BudgetLock({ value, onChange }: BudgetLockProps) {
       const cleanNum = match[1].replace(/,/g, '');
       const paddedNum = cleanNum.padStart(5, '0').slice(-5);
       const parsedDigits = paddedNum.split('').map(d => parseInt(d, 10));
-      
+
       // Only update if digits are actually different to avoid infinite loops
       if (parsedDigits.join('') !== digits.join('')) {
         setDigits(parsedDigits);
@@ -59,13 +59,12 @@ export default function BudgetLock({ value, onChange }: BudgetLockProps) {
     <div className="flex flex-col items-center space-y-6 select-none bg-[#0a0a0a]/30 border border-white/5 rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl md:scale-[1.15] lg:scale-[1.25] md:origin-top w-full max-w-[340px] mx-auto mt-4 mb-8 md:mb-20">
       <div className="flex items-center justify-between w-full px-2">
         <span className="text-[9px] uppercase tracking-[0.25em] text-white/50 font-bold">
-          Estimated Budget (INR Only)
+          Enter Your Budget Above (INR Only)
         </span>
-        <span className={`text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full transition-colors flex items-center gap-1.5 ${
-          isActive 
-            ? 'bg-[#d4af37]/10 border border-[#d4af37]/20 text-[#d4af37]' 
+        <span className={`text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full transition-colors flex items-center gap-1.5 ${isActive
+            ? 'bg-[#d4af37]/10 border border-[#d4af37]/20 text-[#d4af37]'
             : 'bg-red-500/10 border border-red-500/20 text-red-500'
-        }`}>
+          }`}>
           {!isActive && <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />}
           {isActive ? 'Active' : 'Inactive'}
         </span>
@@ -91,10 +90,10 @@ export default function BudgetLock({ value, onChange }: BudgetLockProps) {
             </div>
           </div>
         ))}
-        
+
         {/* Status Light */}
         <div className={`${styles.light} ${isActive ? styles.lightActive : styles.lightInactive}`} />
-        
+
         {/* Decorative Side Arrows */}
         <div className={`${styles.arrow} ${styles.left}`} />
         <div className={`${styles.arrow} ${styles.right}`} />

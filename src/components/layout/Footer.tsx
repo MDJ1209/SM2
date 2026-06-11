@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="max-w-[1800px] mx-auto">
         <div className="grid grid-cols-12 gap-12 lg:gap-8 mb-24 lg:mb-48">
           <div className="col-span-12 lg:col-span-7">
-             <img src="/projects/logo.png" alt="DUDEE" className="h-20 md:h-32 w-auto object-contain mb-8 lg:mb-10" />
+             <Image src="/projects/logo.png" alt="DUDEE" width={400} height={128} className="h-20 md:h-32 w-auto object-contain mb-8 lg:mb-10" />
              <h2 className="text-5xl sm:text-6xl md:text-[8rem] font-serif leading-[0.85] tracking-tighter" data-purpose="footer-cta">
               LET&apos;S BUILD <br /> SOMETHING <br /> BETTER.
             </h2>
@@ -18,16 +19,7 @@ export default function Footer() {
                 dudeepartners@gmail.com
               </a>
             </div>
-            <div className="mt-16 lg:mt-24 flex gap-8">
-              <div>
-                <span className="text-[10px] uppercase tracking-widest text-neutral-500 mb-4 block">Follow</span>
-                <div className="flex gap-6 text-[10px] uppercase tracking-widest">
-                  <Link className="hover:text-neutral-400 transition-colors" href="#">LinkedIn</Link>
-                  <Link className="hover:text-neutral-400 transition-colors" href="#">Instagram</Link>
-                  <Link className="hover:text-neutral-400 transition-colors" href="#">Behance</Link>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
         <div className="editorial-hr opacity-20 mb-8"></div>

@@ -1,11 +1,13 @@
+import dynamic from 'next/dynamic';
 import Image from "next/image";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import Services from "@/components/sections/Services";
-import Portfolio from "@/components/sections/Portfolio";
-import Capabilities from "@/components/sections/Capabilities";
-import Manifesto from "@/components/sections/Manifesto";
-import Validation from "@/components/sections/Validation";
+
+const About = dynamic(() => import('@/components/sections/About'));
+const Services = dynamic(() => import('@/components/sections/Services'));
+const Portfolio = dynamic(() => import('@/components/sections/Portfolio'));
+const Capabilities = dynamic(() => import('@/components/sections/Capabilities'));
+const Manifesto = dynamic(() => import('@/components/sections/Manifesto'));
+const Validation = dynamic(() => import('@/components/sections/Validation'));
 
 export default function Home() {
   return (
