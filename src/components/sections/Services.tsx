@@ -186,7 +186,7 @@ export default function Services() {
 
                   {/* Video Background */}
                   {videoPath && (
-                    <div className="absolute inset-0 z-0 overflow-hidden opacity-17 group-hover:opacity-32 transition-opacity duration-700 pointer-events-none">
+                    <div className="absolute inset-0 z-0 overflow-hidden opacity-30 group-hover:opacity-50 transition-opacity duration-700 pointer-events-none">
                       <video
                         autoPlay
                         loop
